@@ -5,6 +5,6 @@
 		<% @categories.articles.order(created_at: :desc).each do |article| %>
 			<%= link_to article.title, article%> &nbsp;
 			<%= article.created_at.strftime('%b %d %Y') %> <br>
-		<% end %>
+			<% end %>
 	</ul>
 	</p>
