@@ -1,8 +1,8 @@
 <h1>This is the <%=@categories.name.downcase %> page. </h1>
-	<h2>There are <%= @categories.articles.count%> filed under this category.</h2>	
+	<h2>There are <%= @category.articles.count%> filed under this category.</h2>	
 	<p> The articles in this category are as follows: <br>
 	<ul>
-		<% @categories.articles.order(created_at: :desc).each do |article| %>
+		<% @category.articles.order(created_at: :desc).each do |article| %>
 			<%= link_to article.title, article%> &nbsp;
 			<%= article.created_at.strftime('%b %d %Y') %> <br>
 			<% end %>
