@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+	
+	before_filter :authorize, only: [:new] #users can only log in if they have a user_id
+
 	def index
 		@articles = Article.order(updated_at: :desc).limit(25)
 	end

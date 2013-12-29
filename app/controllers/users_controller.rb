@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
+			session[:user_id] = @user.id # When a new user is created, their ID will automatically be added to the session object user_id
 			redirect_to root_url, notice: "Thank you for signing up!"
 		else
 			render "new"

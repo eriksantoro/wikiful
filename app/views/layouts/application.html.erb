@@ -16,10 +16,15 @@
     <div class="container">
       <%= link_to "Wikiful", root_path, :class => "brand" %>
        <div class="session-controls"> 
-          <div class="btn-group">
-            <%= link_to "Sign Up", new_user_path, :class => "btn btn-mini" %>
-            <%= link_to "Log In", new_session_path, :class => "btn btn-mini" %>
-          </div>
+          <% if current_user %>  <!-- If there is a current_user (e.g. already logged in), then put a log out method and put "Logged in as email address"  -->
+            <%= link_to "Log Out", logout_path, :class => 'btn btn-primary btn-mini' %>
+            Logged in as <%= current_user.email %>.
+          <% else %>      
+            <div class="btn-group"> 
+              <%= link_to "Sign Up", signup_path, :class => "btn btn-mini" %>
+              <%= link_to "Log In", login_path, :class => "btn btn-mini" %>
+            </div>
+          <% end %>
        </div>
     </div>
   </div>
