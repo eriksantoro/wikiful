@@ -49,3 +49,11 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'bcrypt-ruby'
+
+group :production do
+	gem 'rails_12factor'
+end
+
+gem 'rails_12factor'
+
+ruby "2.0.0"
